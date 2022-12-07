@@ -42,3 +42,36 @@ public class Anil {
 		
 	}
 }
+
+OUTPUT:
+
+[RemoteTestNG] detected TestNG version 7.4.0
+Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 25701
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 06, 2022 6:01:21 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Country of origin from IMDB: India
+Release Date from IMDB: December 17, 2021 (United States)
+Country from Wikipedia: 17 December 2021
+Release Date from Wikipedia: India
+PASSED: getMovieDetails
+
+===============================================
+    Default test
+    Tests run: 1, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+
+
+
+
+
+
+
+
+
