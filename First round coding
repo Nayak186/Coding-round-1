@@ -1,0 +1,44 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+@Test
+public class Anil {
+	private static String country;
+	private static String releaseDate;
+	private static String countryWiki;
+	private static String releaseDateWiki;
+	
+	public void getMovieDetails(){
+		//set the system property for Chrome driver
+		System.setProperty("webdriver.chrome.driver","D:\\seliniums//chromedriver.exe");
+		//Create Chrome driver
+		ChromeDriver driver = new ChromeDriver();
+		//window has to maximize
+		driver.manage().window().maximize();
+		//Launch the IMDB website
+		driver.get("https://www.imdb.com/title/tt9389998/");
+		//Extract Country from IMDB
+		country = driver.findElement(By.xpath("/html/body/div[2]/main/div/section[1]/div/section/div/div[1]/section[11]/div[2]/ul/li[2]/div/ul/li/a")).getText();
+		//Extract Release Date from IMDB
+		releaseDate = driver.findElement(By.xpath("/html/body/div[2]/main/div/section[1]/div/section/div/div[1]/section[11]/div[2]/ul/li[1]/div/ul/li/a")).getText();
+		//Launch the Wikipedia website
+		driver.get("https://en.wikipedia.org/wiki/Pushpa:_The_Rise");
+		//Extract Country from Wikipedia
+		countryWiki = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[5]/div[1]/table[1]/tbody/tr[14]/td")).getText();
+		
+		//Extract Release Date from Wikipedia
+		releaseDateWiki = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div[5]/div[1]/table[1]/tbody/tr[12]/td/div/ul/li")).getText();
+		
+		//Print the details of Country and Release Date
+		System.out.println("Country of origin from IMDB: "+country);
+		System.out.println("Release Date from IMDB: "+releaseDate);
+		System.out.println("Country from Wikipedia: "+countryWiki);
+		System.out.println("Release Date from Wikipedia: "+releaseDateWiki);
+		// Close all browser
+		driver.close();
+		
+		
+		
+	}
+}
